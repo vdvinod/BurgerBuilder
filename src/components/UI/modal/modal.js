@@ -1,7 +1,11 @@
 import React from "react";
-import Classes from "./modal.css";
+import Classes from "./Modal.css";
+import Aux from "../../../hoc/Aux";
+import Backdrop from "../Backdrop/Backdrop"
 const model = (props) => (
-    <div className={Classes.Modal}
+    <Aux>
+        <Backdrop show={props.show} clicked={props.modalClosed}/>
+        <div className={Classes.Modal}
         style={{
             transform: props.show ? "translateY(0)" : "translateY(-100vh)",
             opacity: props.show ? '1' : '0'
@@ -9,6 +13,8 @@ const model = (props) => (
     >
         {props.children}
     </div>
+    </Aux>
+    
 );
 
 export default model;
