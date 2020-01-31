@@ -1,22 +1,21 @@
-import React from "react";
+import React from 'react';
 
-import Classes from "./SideDrawer.css";
+import Logo from '../../Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
+import classes from './SideDrawer.css';
+import Backdrop from '../../UI/Backdrop/Backdrop';
+import Aux from '../../../hoc/Aux';
 
-import Logo from "../../Logo/Logo";
-import NavigationItems from "../NavigationItems/NavigationItems.js"
-import Backdrop from "../../UI/Backdrop/Backdrop";
-import Aux from "../../../hoc/Aux";
-const sideDrawer = (props) => {
-    let attachedClasses = [Classes.SideDrawer, Classes.Close];
+const sideDrawer = ( props ) => {
+    let attachedClasses = [classes.SideDrawer, classes.Close];
     if (props.open) {
-        attachedClasses = [Classes.SideDrawer, Classes.Open];
+        attachedClasses = [classes.SideDrawer, classes.Open];
     }
-    console.log(attachedClasses);
     return (
         <Aux>
-            <Backdrop show={props.open} clicked={props.closed} />
+            <Backdrop show={props.open} clicked={props.closed}/>
             <div className={attachedClasses.join(' ')}>
-                <div className={Classes.Logo}>
+                <div className={classes.Logo}>
                     <Logo />
                 </div>
                 <nav>
@@ -24,8 +23,7 @@ const sideDrawer = (props) => {
                 </nav>
             </div>
         </Aux>
-
-    )
-}
+    );
+};
 
 export default sideDrawer;

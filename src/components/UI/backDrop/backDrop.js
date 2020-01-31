@@ -1,7 +1,9 @@
-import React from "react";
-import Classes from "./Backdrop.css";
-const backDrop = (props) => {
-    return props.show ? <div className={Classes.Backdrop} onClick={props.clicked}></div> : null;
-}
+import React from 'react';
 
-export default backDrop;
+import classes from './Backdrop.css';
+
+const backdrop = (props) => (
+    props.show ? <div className={classes.Backdrop} onClick={props.clicked}></div> : null
+);
+
+export default backdrop;
